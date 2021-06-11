@@ -25,6 +25,10 @@
 </head>
 <body>
 
+<script> {% if s %} swal("Your form submitted successfully!", "", "success");
+{% endif %}
+</script>
+
 <!-- Navigation-->
 <nav style="background-color: #b11226" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -45,56 +49,172 @@
     </div>
 </nav>
 
+<!-- ======= Hero Section ======= -->
 
-<!-- Contact-->
-<section class="page-section" id="contact">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Contact Us</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg" style="margin-top: 60px">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2 style="text-align: center;font-size: 42px">Contact Us</h2>
+            <br>
+            <br>
         </div>
-        <form action="" method="post" id="contactForm">
-            {% csrf_token %}
-            <div class="row align-items-stretch mb-5">
-                <div class="col-md-6">
+        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to
+            contact us directly. Our team will come back to you within
+            a matter of hours to help you.</p>
+
+
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-8">
+                <form action="" method="post" role="form" class="php-email-form" id="mobile_form">
+                    {% csrf_token %}
+                    <p id="errorTextMobile" style="color: orange; font-weight: 900; display: none"></p>
+                    <div class="form-row">
+                        <div class="col-md-6 form-group">
+                            <input required="" type="text" name="contact-name" class="form-control" id="name"
+                                   placeholder="Your Name" data-rule="minlen:4"
+                                   data-msg="Please enter at least 4 chars">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input required="" type="email" class="form-control" name="contact-email" id="email"
+                                   placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
-                        <input name="contact-name" class="form-control" id="name" type="text" placeholder="Your Name *"
-                               required="required"/>
-                        <p class="help-block text-danger"></p>
+                            <textarea class="form-control" name="contact-message" rows="5" data-rule="required"
+                                      data-msg="Please write something for us" placeholder="Your Request"></textarea>
+                        <div class="validate"></div>
                     </div>
-                    <div class="form-group">
-                        <input name="contact-email" class="form-control" id="email" type="email"
-                               placeholder="Your Email *"
-                               required="required"/>
-                        <p class="help-block text-danger"></p>
+
+                    <div style="text-align: center;width: 100%;padding-bottom: 1em;">
+                        <div class="g-recaptcha" data-sitekey="6Le9LJkaAAAAAAbjKqTqo6fiqBmCEi2Ix7yfPA1K"
+                             style="display: inline-block;">
+                            <div style="width: 304px; height: 78px;">
+                                <div>
+                                    <iframe title="reCAPTCHA"
+                                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Le9LJkaAAAAAAbjKqTqo6fiqBmCEi2Ix7yfPA1K&amp;co=aHR0cHM6Ly9yZWZ1bmRleHByZXNzLndvcmxkOjQ0Mw..&amp;hl=en&amp;v=CdDdhZfPbLLrfYLBdThNS0-Y&amp;size=normal&amp;cb=xcyymegjws2o"
+                                            width="304" height="78" role="presentation" name="a-gugit4bf630o"
+                                            frameborder="0"
+                                            scrolling="no"
+                                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                                </div>
+                                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                                          class="g-recaptcha-response"
+                                          style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group mb-md-0">
-                        <input name="contact-phone" class="form-control" id="phone" type="tel"
-                               placeholder="Your Phone *"
-                               required="required"/>
-                        <p class="help-block text-danger"></p>
+                    <div class="text-center" id="submitButton">
+                        <button name="contact-form"
+                                style="background-color:#b11226;padding: 5px;color: white;font-weight: bold;border-radius: 5px"
+                                type="submit">Submit
+                        </button>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group form-group-textarea mb-md-0">
-                            <textarea name="contact-message" class="form-control" id="message"
-                                      placeholder="Your Message *"
-                                      required="required"></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
+
+
+                </form>
+
             </div>
-            <div class="text-center">
-                <div id="success"></div>
-                <button name="contact-form" style="background-color:#b11226"
-                        class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send
-                    Message
-                </button>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 text-center">
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+                            <path d="M18.5 2c1.309 0 2.5 1.16 2.5 2.434 0 1.358-1.044 3.303-2.5 5.723-1.456-2.42-2.5-4.365-2.5-5.723 0-1.274 1.191-2.434 2.5-2.434zm0-2c-2.361 0-4.5 1.985-4.5 4.434 0 2.45 1.951 5.373 4.5 9.566 2.549-4.193 4.5-7.116 4.5-9.566 0-2.449-2.139-4.434-4.5-4.434zm0 6c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm-7.26 1.237c-.004-.009-.289-.017-.24-.078l.137-.085c.012-.077.072-.162-.008-.304l.047-.125-.1.029s.141-.606.33-.332l-.08.093c.123.122.156.426.195.623.115.06.295.071.088.175.107-.018-.561.286-.648.161-.065-.076.289-.127.279-.157zm-.715-.159c-.078.078.002.128.082.094.113-.05.268-.048.283-.202l.074-.091c.031-.049-.062-.126-.102-.135-.059-.012-.1.064-.137.095l-.066.017-.062.08.008.044-.08.098zm7 9.167l-.734-1.206-.723-1.186c-.73-1.194-1.389-2.276-1.961-3.296l-.07.067c-.377.156-.943-.509-1.34-.531.193.03.018-.49.018-.524-.152-.189-1.123.021-1.377.055-.479.063-.979.057-1.346.355-.258.21-.262.551-.525.716-.17.106-.355.072-.502.209-.258.245-.553.607-.697.929-.061.135.078.458.043.632-.336 1.063.086 2.538 1.375 2.701.312.039.639.209.955.114.252-.076.475-.248.746-.268.377-.025.219.529.736.379.252-.074.365.172.365.359-.084.391-.268.609.088.883.242.188.443.456.486.78.027.182.197.494-.014.602-.15.075-.26.507-.258.649.031.165.365.481.467.621.145.2.039.436.158.663.121.232.236.41.322.645.111.324.959-.007 1.156-.006.674.004 1.014-.944 1.488-1.235.266-.165.191-.616.51-.848.295-.215.607-.344.635-.741.021-.344-.258-1.062-.104-1.353l.103-.165zm-7.302-7.76c.041.172-.119.645-.154.795-.031.138.443.226.416.295.004-.008.641-.22.705-.275l.143-.323c.121-.081.248-.146.385-.196l.164-.285c.055-.021.709-.123.756-.101.164.075.469.389.582.531l.041.032c-.326-.67-.59-1.314-.795-1.942l-.084.036c-.221 0-.527.251-.662.405-.096.104-.67.337-.732.33.33.035.314.276.287.482-.068.476-1.095.035-1.052.216zm10.904 5.049c-.277 4.807-4.252 8.623-9.129 8.623-2.604 0-4.951-1.086-6.619-2.83-.197-.208-.346-.7-.02-.9l.332-.085c.258-.22-.242-1.111-.045-1.254.617-.441.324-.982-.055-1.429-.16-.19-1.043-1.1-1.143-.937.074-.249-.16-.85-.301-1.087-.24-.398-.553-.643-.68-1.081-.047-.174-.047-.703-.151-.826-.041-.05-.359-.185-.348-.257.305-1.82 1.148-3.458 2.365-4.751l.819-.33c.516-.773.545-.173 1.008-.375.154 0 .332-.634.496-.734.289-.185.068-.185.016-.27-.113-.184 2.41-1.103 2.453-.938.033.14-1.25.809-1.109.788-.325.043-.387.627-.327.625.162-.005 1.182-.774 1.656-.61.467.161 1.301-.37 1.627-.64l.042-.039c.029-.761.195-1.494.48-2.172l-.494-.025c-6.074 0-11 4.925-11 11s4.926 11 11 11 11-4.925 11-11c0-.764-.078-1.509-.227-2.229-.49.864-1.043 1.779-1.646 2.763z"/>
+                        </svg>
+                        <p class="mt-3">***********************************</p>
+                    </li>
+
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+                            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.5 17.311l-1.76-3.397-1.032.505c-1.12.543-3.4-3.91-2.305-4.497l1.042-.513-1.747-3.409-1.053.52c-3.601 1.877 2.117 12.991 5.8 11.308l1.055-.517z"/>
+                        </svg>
+                        <p class="mt-3">***********</p>
+                    </li>
+
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+                            <path d="M12 2.02c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 12.55l-5.992-4.57h11.983l-5.991 4.57zm0 1.288l-6-4.629v6.771h12v-6.771l-6 4.629z"/>
+                        </svg>
+                        <p class="mt-3">support@fast-recovery.org</p>
+                    </li>
+                </ul>
             </div>
-        </form>
+            <!--Grid column-->
+
+        </div>
+
+
     </div>
 </section>
+<!-- End Services Section -->
 
+
+<!-- ======= Footer ======= -->
+<footer id="footer" style="background-color: #111;color: #fff">
+
+    <div class="footer-top" style="padding-top: 30px">
+        <div class="container">
+            <div class="row">
+
+                <div class=" footer-contact" style="width: 25%">
+                    <h3>Fast-Recovery</h3>
+                    <p>
+                        <i class="bx bx-chevron-right"></i> <a href="{% url "learning_logs:privacy" %}">Privacy
+                        policy</a><br>
+                        <i class="bx bx-chevron-right"></i> <a href="{% url "learning_logs:terms" %}">Terms and
+                        Conditions</a>
+                    </p>
+                </div>
+
+                <div class="footer-contact" style="width: 50%">
+                    <strong>DISCLAIMER</strong><br>
+                    <div style="padding-top: 1em">
+                        <p>1. Fast-Recovery provides consultations. Chargeback and other Fast recovery programs
+                            contracted thereafter are subject to retainers, fees and/or commissions depending on the
+                            individual case history and the type of service selected Fast-Recovery does not offer any
+                            financial investments or advice.</p>
+                        <p>2. Residents in the United Kingdom: Fast-Recovery does not assist and/or advise consumers
+                            with complaints in relation to mis-sold investment products which have been purchased from
+                            firms regulated by the UK Prudential Regulation Authority (PRA) and/or the UK Financial
+                            Conduct Authority (FCA).</p>
+                    </div>
+
+                </div>
+
+                <div class="footer-contact" style="float: right; width: 25%">
+                    <strong>Email:</strong> support@fast-recovery.org<br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container text-center py-4">
+
+        <div class="mr-md-auto text-center">
+            <div class="copyright">
+                © <span id="currentYear"></span> <strong><span>Fast-Recovery</span></strong>. All Rights Reserved
+            </div>
+        </div>
+
+        <script>
+            let d = new Date();
+            let n = d.getFullYear();
+            document.getElementById('currentYear').innerText = n;
+        </script>
+    </div>
+</footer>
 
 </body>
 </html>

@@ -145,3 +145,11 @@
 .ing{
     color: #b11226;
 }
+.team{
+    background-color: whitesmoke;
+    border: 1px solid #b11226;
+}
+.team-member{
+    margin-right: 10px;
+    margin-left: 10px;
+}

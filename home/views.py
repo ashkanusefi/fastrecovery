@@ -6,10 +6,9 @@ from django.conf import settings
 def index(request):
     s = False
     if request.method == 'POST':
-        if "contact-name" in request.POST.keys():
+        if "contact-form" in request.POST.keys():
             messages = request.POST['contact-name'] + "\n" + \
                        request.POST['contact-email'] + "\n" + \
-                       request.POST['contact-phone'] + "\n" + \
                        request.POST['contact-message']
 
             send_mail("CONTACT FORM",
@@ -66,6 +65,31 @@ def about(request):
 
 
 def contact(request):
+
+    s = False
+    if request.method == 'POST':
+        if "contact-form" in request.POST.keys():
+            messages = request.POST['contact-name'] + "\n" + \
+                       request.POST['contact-email'] + "\n" + \
+                       request.POST['contact-message']
+
+            send_mail("CONTACT FORM",
+                      messages,
+                      settings.EMAIL_HOST_USER,
+                      ['support@fast-recovery.org'],
+                      fail_silently=False
+                      )
+            s = True
+    return render(request, "home/contact.html", {"s": s})
+
+
+def privacy(request):
     context = {
     }
-    return render(request, "home/contact.html", context)
+    return render(request, "home/privacy.html", context)
+
+
+def terms(request):
+    context = {
+    }
+    return render(request, "home/terms.html", context)

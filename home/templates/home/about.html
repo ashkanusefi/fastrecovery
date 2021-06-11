@@ -39,30 +39,41 @@
             <ul style="background-color: #b11226" class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                 <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:about" %}">ABOUT US</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:faq" %}">FAQ</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:contact" %}" >CONTACT</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:contact" %}">CONTACT</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-
+<br>
+<br>
 <!-- About-->
-<section class="page-section" id="ABOUT US">
+<section class="page-section" id="ABOUT US" style="font-weight: bold">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">ABOUT US</h2>
-            <h3 class="section-subheading text-muted">Are you still waiting for your money from a broker? We'd like
-                to hear from you - what you tell us can help others.
+            <h3 class="section-subheading text-muted"
+                style="font-size: 20px;font-style: normal!important;text-align: left">
+
+                Are you still waiting for your money from a broker?
+
+                We'd like to hear from you - what you tell us can help.
+
 
                 Filling simple from will help us to get your case correctly and use all our abilities and
-                professionality to recover your money. Our competent lawyers will take care of your accident and
+                professionality to recover your money.
+
+                Our competent lawyers will take care of your accident and
                 provide you with all recent updates of your case.
+
 
                 We will use this information to help fight against notorious companies and create reports to close
                 their activity.
 
+
                 Just fill the form and our lawyer department will connect with you within next 24 hours and give a
-                consultation.</h3>
+                consultation.
+            </h3>
         </div>
         <ul class="timeline">
             <li class="timeline-inverted">
@@ -72,7 +83,8 @@
                     <div class="timeline-heading">
                         <h4 class="subheading">What you can expect from us</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">When you deal with us you can expect:</p></div>
+                    <div class="timeline-body"><p class="text-muted">When you deal with us you can expect:</p>
+                    </div>
                     <ol>
                         <li>timely, accurate and accessible service.</li>
                         <li>to be dealt with fairly and courteously.</li>
@@ -84,7 +96,8 @@
                             cannot do.
                         </li>
                         <li>that we will identify ourselves when talking or writing to you.</li>
-                        <li>that we will answer your enquiry or transfer your call to the appropriate person.</li>
+                        <li>that we will answer your enquiry or transfer your call to the appropriate person.
+                        </li>
                         <li>our facilities to be safe and accessible.</li>
                         <li>that we will advise you of any appeal rights that you may have.</li>
                     </ol>
@@ -95,5 +108,60 @@
 </section>
 
 
+<!-- ======= Footer ======= -->
+<footer id="footer" style="background-color: #111;color: #fff">
+
+    <div class="footer-top" style="padding-top: 30px">
+        <div class="container">
+            <div class="row">
+
+                <div class=" footer-contact" style="width: 25%">
+                    <h3>Fast-Recovery</h3>
+                    <p>
+                        <i class="bx bx-chevron-right"></i> <a href="{% url "learning_logs:privacy" %}">Privacy
+                        policy</a><br>
+                        <i class="bx bx-chevron-right"></i> <a href="{% url "learning_logs:terms" %}">Terms and Conditions</a>
+                    </p>
+                </div>
+
+                <div class="footer-contact" style="width: 50%">
+                    <strong>DISCLAIMER</strong><br>
+                    <div style="padding-top: 1em">
+                        <p>1. Fast-Recovery provides consultations. Chargeback and other Fast recovery programs
+                            contracted thereafter are subject to retainers, fees and/or commissions depending on the
+                            individual case history and the type of service selected Fast-Recovery does not offer any
+                            financial investments or advice.</p>
+                        <p>2. Residents in the United Kingdom: Fast-Recovery does not assist and/or advise consumers
+                            with complaints in relation to mis-sold investment products which have been purchased from
+                            firms regulated by the UK Prudential Regulation Authority (PRA) and/or the UK Financial
+                            Conduct Authority (FCA).</p>
+                    </div>
+
+                </div>
+
+                <div class="footer-contact" style="float: right; width: 25%">
+                    <strong>Email:</strong> support@fast-recovery.org<br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container text-center py-4">
+
+        <div class="mr-md-auto text-center">
+            <div class="copyright">
+                © <span id="currentYear"></span> <strong><span>Fast-Recovery</span></strong>. All Rights Reserved
+            </div>
+        </div>
+
+        <script>
+            let d = new Date();
+            let n = d.getFullYear();
+            document.getElementById('currentYear').innerText = n;
+        </script>
+    </div>
+</footer>
 </body>
 </html>

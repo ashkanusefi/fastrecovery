@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>faq</title>
+    <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
+    <script src="{% static "js/sweetalert.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="{% static "js/all.js" %}" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+
+
+
+
+</head>
+<body>
+
+
+<!-- Navigation-->
+<nav style="background-color: #b11226" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="{% url "learning_logs:index" %}"><img
+                src="{% static 'assets/img/navbar-logo.svg' %}" alt="..."/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div style="background-color: #b11226" class="collapse navbar-collapse" id="navbarResponsive">
+            <ul style="background-color: #b11226" class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:about" %}">ABOUT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:faq" %}">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:contact" %}" >CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main id="main">
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg" style="margin-top: 60px">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2 style="text-align: center;font-weight: bold">Frequently Asked Questions</h2>
+            </div>
+            <br>
+            <br>
+
+            <div class="panel-group" id="faqAccordion">
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                         data-parent="#faqAccordion" data-target="#question0">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">How does Fast-Recovery work?</a>
+                        </h4>
+
+                    </div>
+                    <div id="question0" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                You choose the legal service you require, answer a few questions on our quote form and
+                                we will send you an email link to your quotes. You'll then be able to choose from
+                                different legal service providers, do more research or speak to them directly.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
+                         data-parent="#faqAccordion" data-target="#question1">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">How much does it cost to use Fast-Recovery?</a>
+                        </h4>
+
+                    </div>
+                    <div id="question1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                It is free to find a legal service provider on Fast-Recovery. We do not charge
+                                customers for using our website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
+                         data-parent="#faqAccordion" data-target="#question2">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">Does Fast-Recovery offer legal advice?</a>
+                        </h4>
+
+                    </div>
+                    <div id="question2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                Fast-Recovery is a comparison website for legal services. We can help you find a
+                                professional but we are not legal experts ourselves and are not qualified to offer
+                                direct advice or comment on specific cases.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle"
+                         data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">How does Fast-Recovery check their legal partners?
+                            </a>
+                        </h4>
+
+                    </div>
+                    <div id="question3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                We only work with high quality legal professionals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle"
+                         data-toggle="collapse" data-parent="#faqAccordion" data-target="#question4">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">How long does it take to get a quote?
+                            </a>
+                        </h4>
+
+                    </div>
+                    <div id="question4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                You should receive your email within a couple of minutes - you just need to answer a few
+                                quick questions so we can match you with the right service.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle"
+                         data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">How can I contact Fast-Recovery?
+                            </a>
+                        </h4>
+
+                    </div>
+                    <div id="question5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                Visit our Contact Us page for general enquiries, press
+                                enquiries or career opportunities. You can also use our chat feature.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle"
+                         data-toggle="collapse" data-parent="#faqAccordion" data-target="#question6">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">When can I compare legal service providers?
+                            </a>
+                        </h4>
+
+                    </div>
+                    <div id="question6" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                You can use our comparison tool to receive quotes at any time, but be aware that you may
+                                not get an immediate personalised response from our legal service providers outside
+                                office hours.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle"
+                         data-toggle="collapse" data-parent="#faqAccordion" data-target="#question7">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">What if I have chosen the wrong service?
+                            </a>
+                        </h4>
+
+                    </div>
+                    <div id="question7" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                If you realise you are searching for the wrong legal service while answering the
+                                qualifying questions, simply return to the homepage and select the correct service for
+                                your needs.
+
+                            </p>
+                            <p>
+                                If you discover that you have chosen the wrong service once contacted by the legal
+                                service provider, you may choose to renegotiate your agreement with the firm for the
+                                service you do require or simply perform another search through Refund Express.
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle"
+                         data-toggle="collapse" data-parent="#faqAccordion" data-target="#question8">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">I want to use a local lawyer - can I use Fast-Recovery for this?
+                            </a>
+                        </h4>
+
+                    </div>
+                    <div id="question8" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                Fast-Recovery gives clients access to a national network of legal service providers.
+                                Once you have answered the qualifying questions for your chosen service, you may filter
+                                results by location to find the nearest legal expert to you.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle"
+                         data-toggle="collapse" data-parent="#faqAccordion" data-target="#question9">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">What do you do with my details?
+                            </a>
+                        </h4>
+
+                    </div>
+                    <div id="question9" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                Your details are passed on to the legal service providers in order for them to provide a
+                                quote. For more information, check our privacy policy.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle collapsed question-toggle"
+                         data-toggle="collapse" data-parent="#faqAccordion" data-target="#question10">
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">Do I have to give my email address?
+                            </a>
+                        </h4>
+
+                    </div>
+                    <div id="question10" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+
+                            <p>
+                                We validate our quotes for security, so you need to have access to an email address in
+                                order to receive your quote.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section><!-- End Services Section -->
+
+</main><!-- End #main -->
+<script>
+    $(function () {
+        $('.accordion-toggle').on('click', function (e) {
+            $($(this).attr("data-target")).toggle()
+        })
+    });
+</script>
+</body>
+</html>

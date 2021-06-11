@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact us</title>
+    <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
+    <script src="{% static "js/sweetalert.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="{% static "js/all.js" %}" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+</head>
+<body>
+
+<!-- Navigation-->
+<nav style="background-color: #b11226" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="{% url "learning_logs:index" %}"><img
+                src="{% static 'assets/img/navbar-logo.svg' %}" alt="..."/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div style="background-color: #b11226" class="collapse navbar-collapse" id="navbarResponsive">
+            <ul style="background-color: #b11226" class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:about" %}">ABOUT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:faq" %}">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:contact" %}">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Contact-->
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <form action="" method="post" id="contactForm">
+            {% csrf_token %}
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input name="contact-name" class="form-control" id="name" type="text" placeholder="Your Name *"
+                               required="required"/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="form-group">
+                        <input name="contact-email" class="form-control" id="email" type="email"
+                               placeholder="Your Email *"
+                               required="required"/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="form-group mb-md-0">
+                        <input name="contact-phone" class="form-control" id="phone" type="tel"
+                               placeholder="Your Phone *"
+                               required="required"/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-textarea mb-md-0">
+                            <textarea name="contact-message" class="form-control" id="message"
+                                      placeholder="Your Message *"
+                                      required="required"></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <div id="success"></div>
+                <button name="contact-form" style="background-color:#b11226"
+                        class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send
+                    Message
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+</body>
+</html>

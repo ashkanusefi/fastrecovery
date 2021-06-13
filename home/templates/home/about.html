@@ -25,88 +25,59 @@
 </head>
 <body>
 
-<!-- Navigation-->
-<nav style="background-color: #b11226" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand" href="{% url "learning_logs:index" %}"><img
-                src="{% static 'assets/img/navbar-logo.svg' %}" alt="..."/></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div style="background-color: #b11226" class="collapse navbar-collapse" id="navbarResponsive">
-            <ul style="background-color: #b11226" class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:about" %}">ABOUT US</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:faq" %}">FAQ</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url "learning_logs:contact" %}">CONTACT</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<br>
-<br>
+{% include "home/navbar.html" %}
 <!-- About-->
-<section class="page-section" id="ABOUT US" style="font-weight: bold">
+<br>
+<section class="page-section" id="ABOUT US"
+         style="font-size: 2rem!important;font-weight: normal!important;font-style:normal;!important;">
     <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">ABOUT US</h2>
+        <div class="text-center  section-title">
+            <h2 class="section-heading text-uppercase" style="font-size: 32px;font-weight: 700;">ABOUT US</h2>
+            <br>
             <h3 class="section-subheading text-muted"
-                style="font-size: 20px;font-style: normal!important;text-align: left">
+                style="font-size: 1rem!important;font-style: normal; text-align: left">
 
-                Are you still waiting for your money from a broker?
+                <p>Are you still waiting for your money from a broker?
 
-                We'd like to hear from you - what you tell us can help.
-
-
-                Filling simple from will help us to get your case correctly and use all our abilities and
-                professionality to recover your money.
-
-                Our competent lawyers will take care of your accident and
-                provide you with all recent updates of your case.
+                    We'd like to hear from you - what you tell us can help others.</p>
 
 
-                We will use this information to help fight against notorious companies and create reports to close
-                their activity.
+                <p>Filling simple from will help us to get your case correctly and use all our abilities and
+                    professionality to recover your money.
+
+                    Our competent lawyers will take care of your accident and
+                    provide you with all recent updates of your case.</p>
 
 
-                Just fill the form and our lawyer department will connect with you within next 24 hours and give a
-                consultation.
+                <p>We will use this information to help fight against notorious companies and create reports to close
+                    their activity.
+
+
+                    Just fill the form and our lawyer department will connect with you within next 24 hours and give a
+                    consultation.</p>
             </h3>
         </div>
-        <ul class="timeline">
-            <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid"
-                                                 src="{% static 'assets/img/about/2.jpg' %}" alt="..."/></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="subheading">What you can expect from us</h4>
-                    </div>
-                    <div class="timeline-body"><p class="text-muted">When you deal with us you can expect:</p>
-                    </div>
-                    <ol>
-                        <li>timely, accurate and accessible service.</li>
-                        <li>to be dealt with fairly and courteously.</li>
-                        <li>to have your privacy rights respected.</li>
-                        <li>that we will advise you of waiting times, and of a time frame for the progress or
-                            completion of your complaint.
-                        </li>
-                        <li>that we will provide you with an explanation of our procedures, and what we can and
-                            cannot do.
-                        </li>
-                        <li>that we will identify ourselves when talking or writing to you.</li>
-                        <li>that we will answer your enquiry or transfer your call to the appropriate person.
-                        </li>
-                        <li>our facilities to be safe and accessible.</li>
-                        <li>that we will advise you of any appeal rights that you may have.</li>
-                    </ol>
-                </div>
+        <h2 style="margin-bottom: .5rem;font-weight: 500;line-height: 1.2;">What you can expect from us</h2>
+        <p style="font-size: 1rem;font-weight: 400;line-height: 1.5;">When you deal with us you can expect:</p>
+        <ul style="font-size: 1rem;font-weight: 400;line-height: 1.5;">
+            <li>timely, accurate and accessible service</li>
+            <li>to be dealt with fairly and courteously</li>
+            <li>to have your privacy rights respected</li>
+            <li>that we will advise you of waiting times, and of a time frame for the progress or completion of your
+                complaint
             </li>
+            <li>that we will provide you with an explanation of our procedures, and what we can and cannot do</li>
+            <li>that we will identify ourselves when talking or writing to you</li>
+            <li>that we will answer your enquiry or transfer your call to the appropriate person</li>
+            <li>that if your issue is outside our area of authority and it is possible to refer you to another agency,
+                we will do so
+            </li>
+            <li>our facilities to be safe and accessible</li>
+            <li>that we will have special regard for the needs of vulnerable and disadvantaged customers</li>
+            <li>that we will advise you of any appeal rights that you may have.</li>
         </ul>
     </div>
 </section>
-
 
 <!-- ======= Footer ======= -->
 <footer id="footer" style="background-color: #111;color: #fff;margin: 0px!important;">
@@ -120,7 +91,8 @@
                     <p>
                         <i class="bx bx-chevron-right"></i> <a href="{% url "learning_logs:privacy" %}">Privacy
                         policy</a><br>
-                        <i class="bx bx-chevron-right"></i> <a href="{% url "learning_logs:terms" %}">Terms and Conditions</a>
+                        <i class="bx bx-chevron-right"></i> <a href="{% url "learning_logs:terms" %}">Terms and
+                        Conditions</a>
                     </p>
                 </div>
 
@@ -128,12 +100,17 @@
                     <strong>DISCLAIMER</strong><br>
                     <div style="padding-top: 1em">
                         <p>1. Fast-Recovery provides consultations. Chargeback and other Fast recovery programs
-                            contracted thereafter are subject to retainers, fees and/or commissions depending on the
-                            individual case history and the type of service selected Fast-Recovery does not offer any
+                            contracted thereafter are subject to retainers, fees and/or commissions depending on
+                            the
+                            individual case history and the type of service selected Fast-Recovery does not
+                            offer any
                             financial investments or advice.</p>
-                        <p>2. Residents in the United Kingdom: Fast-Recovery does not assist and/or advise consumers
-                            with complaints in relation to mis-sold investment products which have been purchased from
-                            firms regulated by the UK Prudential Regulation Authority (PRA) and/or the UK Financial
+                        <p>2. Residents in the United Kingdom: Fast-Recovery does not assist and/or advise
+                            consumers
+                            with complaints in relation to mis-sold investment products which have been
+                            purchased from
+                            firms regulated by the UK Prudential Regulation Authority (PRA) and/or the UK
+                            Financial
                             Conduct Authority (FCA).</p>
                     </div>
 
@@ -147,12 +124,12 @@
         </div>
     </div>
 
-
     <div class="container text-center py-4">
 
         <div class="mr-md-auto text-center">
             <div class="copyright">
-                © <span id="currentYear"></span> <strong><span>Fast-Recovery</span></strong>. All Rights Reserved
+                © <span id="currentYear"></span> <strong><span>Fast-Recovery</span></strong>. All Rights
+                Reserved
             </div>
         </div>
 

@@ -27,10 +27,16 @@
 </head>
 <body>
 
+<script> {% if s %} swal("Your form submitted successfully!", "", "success");
+{% endif %}
+</script>
+
+
 {% include "home/navbar.html" %}
 <main id="main">
 
     <!-- ======= Services Section ======= -->
+    <br>
     <section id="services" class="services section-bg" style="margin-top: 60px">
         <div class="container" data-aos="fade-up">
 
@@ -85,7 +91,7 @@
                     <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
                          data-parent="#faqAccordion" data-target="#question2">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">Does Fast-Recovery offer legal advice?</a>
+                            <a href="#question1" class="ing">Does Fast-Recovery offer legal advice?</a>
                         </h4>
 
                     </div>
@@ -106,7 +112,7 @@
                     <div class="panel-heading accordion-toggle collapsed question-toggle"
                          data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">How does Fast-Recovery check their legal partners?
+                            <a href="#question2" class="ing">How does Fast-Recovery check their legal partners?
                             </a>
                         </h4>
 
@@ -125,7 +131,7 @@
                     <div class="panel-heading accordion-toggle collapsed question-toggle"
                          data-toggle="collapse" data-parent="#faqAccordion" data-target="#question4">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">How long does it take to get a quote?
+                            <a href="#question3" class="ing">How long does it take to get a quote?
                             </a>
                         </h4>
 
@@ -146,7 +152,7 @@
                     <div class="panel-heading accordion-toggle collapsed question-toggle"
                          data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">How can I contact Fast-Recovery?
+                            <a href="#question4" class="ing">How can I contact Fast-Recovery?
                             </a>
                         </h4>
 
@@ -167,7 +173,7 @@
                     <div class="panel-heading accordion-toggle collapsed question-toggle"
                          data-toggle="collapse" data-parent="#faqAccordion" data-target="#question6">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">When can I compare legal service providers?
+                            <a href="#question5" class="ing">When can I compare legal service providers?
                             </a>
                         </h4>
 
@@ -189,7 +195,7 @@
                     <div class="panel-heading accordion-toggle collapsed question-toggle"
                          data-toggle="collapse" data-parent="#faqAccordion" data-target="#question7">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">What if I have chosen the wrong service?
+                            <a href="#question6" class="ing">What if I have chosen the wrong service?
                             </a>
                         </h4>
 
@@ -218,7 +224,7 @@
                     <div class="panel-heading accordion-toggle collapsed question-toggle"
                          data-toggle="collapse" data-parent="#faqAccordion" data-target="#question8">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">I want to use a local lawyer - can I use Fast-Recovery for this?
+                            <a href="#question7" class="ing">I want to use a local lawyer - can I use Fast-Recovery for this?
                             </a>
                         </h4>
 
@@ -240,7 +246,7 @@
                     <div class="panel-heading accordion-toggle collapsed question-toggle"
                          data-toggle="collapse" data-parent="#faqAccordion" data-target="#question9">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">What do you do with my details?
+                            <a href="#question8" class="ing">What do you do with my details?
                             </a>
                         </h4>
 
@@ -257,11 +263,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default ">
+                <div class="panel panel-default">
                     <div class="panel-heading accordion-toggle collapsed question-toggle"
                          data-toggle="collapse" data-parent="#faqAccordion" data-target="#question10">
                         <h4 class="panel-title">
-                            <a href="#" class="ing">Do I have to give my email address?
+                            <a href="#question9" class="ing">Do I have to give my email address?
                             </a>
                         </h4>
 
@@ -344,14 +350,10 @@
             </div>
         </div>
 
-        <script>
-            let d = new Date();
-            let n = d.getFullYear();
-            document.getElementById('currentYear').innerText = n;
-        </script>
     </div>
 </footer>
 
+{% include "home/sendmessage.html" %}
 
 </body>
 </html>

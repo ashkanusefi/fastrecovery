@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<button style="background-color:blue;padding: 5px;border-radius: 15px;width: 150px" class="open-button"
+        onclick="openForm()">Send Massage
+</button>
+
+<div class="form-popup" id="myForm">
+    <div type="button" style="color: black;width: 1em;font-size: 30px" id="close" onclick="closeForm()">x</div>
+
+    <form action="" method="post" class="form-container">
+        {% csrf_token %}
+        <p style="text-align: center;color: white">Please fill out the form below<br> and we will get back to you as
+            soon as
+            possible.</p>
+
+
+        <input type="text" placeholder="*Name" name="send-name" required>
+
+
+        <input type="text" placeholder="*Email" name="send-email" required>
+
+        <textarea style="height: 120px;background-color: white;width: 100%;" type="text" placeholder="*Massage"
+                  name="text" required></textarea>
+
+        <button type="submit" name="send-message" class="btn" style="color: black!important;">Send Message</button>
+        <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+        <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+    </form>
+</div>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
+
+
+

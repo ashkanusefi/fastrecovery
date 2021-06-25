@@ -21,7 +21,7 @@ def index(request):
         elif "send-message" in request.POST.keys():
             messages = request.POST['send-name'] + "\n" + \
                        request.POST['send-email'] + "\n" + \
-                       request.POST['send-message']
+                       request.POST['text']
 
             send_mail("SEND MESSAGE FORM",
                       messages,
@@ -53,27 +53,62 @@ def index(request):
 
 
 def faq(request):
-    context = {
-    }
-    return render(request, "home/faq.html", context)
+    s = False
+    if request.method == 'POST':
+        if "send-message" in request.POST.keys():
+            messages = request.POST['send-name'] + "\n" + \
+                       request.POST['send-email'] + "\n" + \
+                       request.POST['text']
+
+            send_mail("SEND MESSAGE FORM",
+                      messages,
+                      settings.EMAIL_HOST_USER,
+                      ['support@fast-recovery.org'],
+                      fail_silently=False
+                      )
+            s = True
+    return render(request, "home/faq.html", {"s": s})
 
 
 def about(request):
-    context = {
-    }
-    return render(request, "home/about.html", context)
+    s = False
+    if request.method == 'POST':
+        if "send-message" in request.POST.keys():
+            messages = request.POST['send-name'] + "\n" + \
+                       request.POST['send-email'] + "\n" + \
+                       request.POST['text']
+
+            send_mail("SEND MESSAGE FORM",
+                      messages,
+                      settings.EMAIL_HOST_USER,
+                      ['support@fast-recovery.org'],
+                      fail_silently=False
+                      )
+            s = True
+    return render(request, "home/about.html", {"s": s})
 
 
 def contact(request):
-
     s = False
     if request.method == 'POST':
         if "contact-form" in request.POST.keys():
             messages = request.POST['contact-name'] + "\n" + \
                        request.POST['contact-email'] + "\n" + \
-                       request.POST['contact-message']
+                       request.POST['text']
 
             send_mail("CONTACT FORM",
+                      messages,
+                      settings.EMAIL_HOST_USER,
+                      ['support@fast-recovery.org'],
+                      fail_silently=False
+                      )
+            s = True
+        elif "send-message" in request.POST.keys():
+            messages = request.POST['send-name'] + "\n" + \
+                       request.POST['send-email'] + "\n" + \
+                       request.POST['text']
+
+            send_mail("SEND MESSAGE FORM",
                       messages,
                       settings.EMAIL_HOST_USER,
                       ['support@fast-recovery.org'],
@@ -85,11 +120,13 @@ def contact(request):
 
 def privacy(request):
     context = {
+
     }
     return render(request, "home/privacy.html", context)
 
 
 def terms(request):
     context = {
+
     }
     return render(request, "home/terms.html", context)
